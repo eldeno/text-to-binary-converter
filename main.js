@@ -13,11 +13,14 @@ const convertToBinary = (text) => {
     let arr = text.split('');
     let convertedInput = '';
     for (let i = 0; i < arr.length; i++) {
-        let asciiCode = arr[i].charCodeAt(0);
-        console.log(asciiCode);
-        let number = parseInt(asciiCode, 10);
-        let binaryCode = number.toString(2);
-        convertedInput += "0" + binaryCode;
+        if (arr[i] === ' ') {
+            convertedInput += '00100000';
+        } else {
+            let asciiCode = arr[i].charCodeAt(0);
+            let number = parseInt(asciiCode, 10);
+            let binaryCode = number.toString(2);
+            convertedInput += "0" + binaryCode;
+        }
     }
     return convertedInput;
 }

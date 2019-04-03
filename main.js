@@ -17,7 +17,7 @@ const convertToBinary = (text) => {
         console.log(asciiCode);
         let number = parseInt(asciiCode, 10);
         let binaryCode = number.toString(2);
-        convertedInput += binaryCode;
+        convertedInput += "0" + binaryCode;
     }
     return convertedInput;
 }
